@@ -1,1 +1,50 @@
+table, td {
+	border: 1px solid black;
+}
 
+td {
+	width: 40px;
+	height: 40px;
+}
+
+main {
+	display: flex;
+	align-items: center;
+	height: 100vh;
+	width: 100vw;
+}
+
+.gameTable {
+	width: 80%;
+	display: flex;
+	justify-content: center;
+}
+
+.menu {
+	width: 20%;
+	height: 100%;
+}
+
+.menu-btns {
+	height: 50%;
+	background: blue;
+}
+
+.menu-dataIG {
+	height: 50%;
+}
+
+.menu-dataIG-pers {
+	display: flex;
+	background: green;
+	height: 90%;
+}
+
+.menu-dataIG-turns {
+	height: 10%;
+}
+
+.menu-dataIG-pers-trump {
+	width: 50%;
+	background: yellow;
+}
