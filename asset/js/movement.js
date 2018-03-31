@@ -7,6 +7,7 @@ var scoreMelania = document.querySelector(".scoreMelania");
 var MPMelania = document.querySelector(".MPMelania");
 var capacityMelania = document.querySelector(".capacityMelania");
 var victoryTrump = document.querySelector(".victoryTrump");
+var victoryMelania = document.querySelector(".victoryMelania");
 
 var trumpImg = "<img style='width:36px;height:36px;' src='./asset/img/trump.png' />";
 var melaniaImg = "<img style='width:36px;height:36px;' src='./asset/img/melania.png' />";
@@ -25,10 +26,17 @@ var petitePosY = 1;
 
 var MP = 3;
 
-var turn = 30;
+var turn = 2;
 
-var gameOver = () => {
-	victoryTrump.style.display = "flex";
+var gameOver = (pers) => {
+	if (pers === 'trump') {
+		victoryTrump.style.display = "flex";
+		return;
+	}
+	if (pers === 'melania') {
+		victoryMelania.style.display = "flex";
+		return;
+	}
 }
 
 var moveTo = (posX, posY, pers) => {
@@ -48,7 +56,12 @@ var render = () => {
 	turnsLeft.innerHTML = turn;
 
 	if (trumpPosX === petitePosX && trumpPosY === petitePosY) {
-		gameOver();
+		gameOver('trump');
+		return;
+	}
+	if (turn === 0) {
+		gameOver('melania');
+		return;
 	}
 }
 

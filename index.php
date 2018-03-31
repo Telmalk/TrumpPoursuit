@@ -14,6 +14,10 @@ require_once "./include/header.php"
             <h2 class="victoryTrumpTitle">YOU WON !</h2>
             <video class='victoryTrumpVid' autoplay loop src='./asset/img/sexyTrump.mp4' />
         </div>
+        <div class="victoryMelania">
+            <h2 class="victoryMelaniaTitle">YOU WON !</h2>
+            <img class='victoryMelaniaVid' autoplay loop src='./asset/img/melania.gif' />
+        </div>
 		<div class="gameTable">
 			<table>
                 <?php
