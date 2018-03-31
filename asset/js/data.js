@@ -17,7 +17,8 @@ var generateDatas = function() {
         "hpMela": hpMela.value,
         "finalPosX": finalPosX.value,
         "finalPosY": finalPosY.value;
-        "turn": 3
+        "turn": 30,
+        "MP": 3
     }
     return datas;
 }
