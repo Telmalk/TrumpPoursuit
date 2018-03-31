@@ -95,29 +95,57 @@ window.addEventListener('keyup', (e) => {
 		posY = melaniaPosY;
 	}
 
-	if (e.keyCode === 39) {
-		if (posX !== 23) {
-			MP--;
+	if (turn % 2 === 0) {
+		if (e.keyCode === 68) {
+			if (posX !== 23) {
+				MP--;
+			}
+			posX = posX === 23 ? posX : posX + 1;
 		}
-		posX = posX === 23 ? posX : posX + 1;
+		if (e.keyCode === 81) {
+			if (posX !== 0) {
+				MP--;
+			}
+			posX = posX === 0 ? posX : posX - 1;
+		}
+		if (e.keyCode === 90) {
+			if (posY !== 0) {
+				MP--;
+			}
+			posY = posY === 0 ? posY : posY - 1;
+		}
+		if (e.keyCode === 83) {
+			if (posX !== 15) {
+				MP--;
+			}
+			posY = posY === 15 ? posY : posY + 1;
+		}
 	}
-	if (e.keyCode === 37) {
-		if (posX !== 0) {
-			MP--;
+	if (turn % 2 === 1) {
+		if (e.keyCode === 39) {
+			if (posX !== 23) {
+				MP--;
+			}
+			posX = posX === 23 ? posX : posX + 1;
 		}
-		posX = posX === 0 ? posX : posX - 1;
-	}
-	if (e.keyCode === 38) {
-		if (posY !== 0) {
-			MP--;
+		if (e.keyCode === 37) {
+			if (posX !== 0) {
+				MP--;
+			}
+			posX = posX === 0 ? posX : posX - 1;
 		}
-		posY = posY === 0 ? posY : posY - 1;
-	}
-	if (e.keyCode === 40) {
-		if (posX !== 15) {
-			MP--;
+		if (e.keyCode === 38) {
+			if (posY !== 0) {
+				MP--;
+			}
+			posY = posY === 0 ? posY : posY - 1;
 		}
-		posY = posY === 15 ? posY : posY + 1;
+		if (e.keyCode === 40) {
+			if (posX !== 15) {
+				MP--;
+			}
+			posY = posY === 15 ? posY : posY + 1;
+		}
 	}
 
 	if (turn % 2 === 0) {
