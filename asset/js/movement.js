@@ -8,6 +8,8 @@ var MPMelania = document.querySelector(".MPMelania");
 var capacityMelania = document.querySelector(".capacityMelania");
 var victoryTrump = document.querySelector(".victoryTrump");
 var victoryMelania = document.querySelector(".victoryMelania");
+var menuDataIGPersTrump = document.querySelector(".menu-dataIG-pers-trump");
+var menuDataIGPersMelania = document.querySelector(".menu-dataIG-pers-melania");
 
 var trumpImg = "<img style='width:36px;height:36px;' src='./asset/img/trump.png' />";
 var melaniaImg = "<img style='width:36px;height:36px;' src='./asset/img/melania.png' />";
@@ -26,7 +28,7 @@ var petitePosY = 1;
 
 var MP = 3;
 
-var turn = 2;
+var turn = 30;
 
 var gameOver = (pers) => {
 	if (pers === 'trump') {
@@ -49,6 +51,13 @@ var render = () => {
 			gameTable.rows[i].cells[j].innerHTML = '';			
 		}
 	}
+	
+	if (MP === 0) {
+		MP = 3;
+		turn--;
+		menuDataIGPersTrump.classList.toggle('currentPlayer');
+		menuDataIGPersMelania.classList.toggle('currentPlayer');
+	}
 
 	moveTo(trumpPosX, trumpPosY, trumpImg);
 	moveTo(melaniaPosX, melaniaPosY, melaniaImg);
@@ -70,11 +79,13 @@ window.addEventListener('keyup', (e) => {
 	let posX;
 	let posY;
 
-	if (MP === 0) {
-		MP = 3;
-		turn--;
-		return;
-	}
+	// if (MP === 0) {
+	// 	MP = 3;
+	// 	turn--;
+	// 	menuDataIGPersTrump.classList.toggle('currentPlayer');
+	// 	menuDataIGPersMelania.classList.toggle('currentPlayer');
+	// 	return;
+	// }
 
 	if (turn % 2 === 0) {
 		posX = trumpPosX;

@@ -22,7 +22,7 @@
         </div>
 
         <div class="menu-dataIG-pers">
-            <div class="menu-dataIG-pers-trump">
+            <div class="menu-dataIG-pers-trump currentPlayer">
                 <h3>TRUMP</h3>
                 <p>Score: <span class="scoreTrump"></span></p>
                 <p>MP: <span class="MPTrump"></span></p>
