@@ -16,7 +16,7 @@ var generateDatas = function() {
         "posYMela": posYMela.value,
         "hpMela": hpMela.value,
         "finalPosX": finalPosX.value,
-        "finalPosY": finalPosY.value;
+        "finalPosY": finalPosY.value,
         "turn": 30,
         "MP": 3
     }
