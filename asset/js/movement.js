@@ -30,6 +30,8 @@ var hpMela = 100;
 var petitePosX = 2;
 var petitePosY = 1;
 
+var dollars = [];
+
 var MP = 3;
 
 var turn = 30;
@@ -53,6 +55,33 @@ var moveTo = (posX, posY, pers) => {
 };
 
 var render = () => {
+	MP = MP < 0 ? 0 : MP;
+
+	if ((trumpSkill1 === 0 && turn % 2 === 0) || (melaniaSkill1 === 0 && turn % 2 === 1)) {
+		MP = 3;
+		turn--;
+		menuDataIGPersTrump.classList.toggle('currentPlayer');
+		menuDataIGPersMelania.classList.toggle('currentPlayer');
+	}
+
+	if ((MP === 0 && trumpSkill1 && turn % 2 === 0) || (MP === 0 && melaniaSkill1 && turn % 2 === 1)) {
+		for (var i = 0; i < 16; i++) {
+			for (var j = 0; j < 24; j++) {
+				gameTable.rows[i].cells[j].innerHTML = '';
+			}
+		}
+		HPTrump.innerHTML = hpTrump;
+		HPMelania.innerHTML = hpMela;
+		moveTo(trumpPosX, trumpPosY, trumpImg);
+		moveTo(melaniaPosX, melaniaPosY, melaniaImg);
+		moveTo(petitePosX, petitePosY, petiteImg);
+		turnsLeft.innerHTML = turn;
+		for (var k = 0; k < dollars.length; k++) {
+			gameTable.rows[dollars[k][0]].cells[dollars[k][1]].innerHTML = '$';
+		}
+		return;
+	}
+
 	for (var i = 0; i < 16; i++) {
 		for (var j = 0; j < 24; j++) {
 			gameTable.rows[i].cells[j].innerHTML = '';			
@@ -72,6 +101,9 @@ var render = () => {
 	moveTo(melaniaPosX, melaniaPosY, melaniaImg);
 	moveTo(petitePosX, petitePosY, petiteImg);
 	turnsLeft.innerHTML = turn;
+	for (var k = 0; k < dollars.length; k++) {
+		gameTable.rows[dollars[k][0]].cells[dollars[k][1]].innerHTML = '$';
+	}
 
 	if (trumpPosX === petitePosX && trumpPosY === petitePosY) {
 		gameOver('trump');
@@ -84,6 +116,9 @@ var render = () => {
 }
 
 window.addEventListener('keyup', (e) => {
+	if (MP <= 0) {
+		return;
+	}
 	let posX;
 	let posY;
 

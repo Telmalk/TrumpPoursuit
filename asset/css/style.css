@@ -88,3 +88,10 @@ main {
 .currentPlayer {
 	background: red;
 }
+
+.currentPlayer .TrumpCacBtn {
+	background: yellow;
+}
+.currentPlayer .MelaniaCacBtn {
+	background: yellow;
+}

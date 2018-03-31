@@ -2,10 +2,12 @@ var myTable = document.getElementById('myTable');
 
 var melaniaBtn1 = document.querySelector('.MelaniaCacBtn');
 var melaniaBtn2 = document.querySelector('.MelaniaRangeBtn');
+var melaniaSkill1 = 1;
 
 // var trumpImg = document.querySelector('.trumpImg');
 var trumpBtn1 = document.querySelector('.TrumpCacBtn');
 var trumpBtn2 = document.querySelector('.TrumpRangeBtn');
+var trumpSkill1 = 1;
 
 var HPTrump = document.querySelector(".HPTrump");
 var HPMelania = document.querySelector(".HPMelania");
@@ -108,11 +110,20 @@ function melaniaCac() {
       trumpPosY++;
     }
 
+    melaniaSkill1 = 0;
+
     render();
 
+    melaniaSkill1 = 1;
+
   } else {
+    melaniaSkill1 = 0;
+
+    render();
+
+    melaniaSkill1 = 1;
     // Faire l'anim d'action impossible
-    melaniaBtn1.className = 'nope';
+    // melaniaBtn1.className = 'nope';
   }
 }
 
@@ -129,6 +140,23 @@ function trumpHealth() {
 
 }
 
-function trumpJump() {
+function trumpCac() {
+  if (turn % 2 === 0) {
+    dollars.push([Math.floor(Math.random() * 16),Math.floor(Math.random() * 24)]);
+    MP = 0;
+  }
 
+  trumpSkill1 = 0;
+
+  render();
+  trumpSkill1 = 1;
 }
+
+window.addEventListener('keyup', (e) => {
+  if (e.keyCode === 65) {
+    trumpCac();
+  }
+  if (e.keyCode === 76) {
+    melaniaCac();
+  }
+})
