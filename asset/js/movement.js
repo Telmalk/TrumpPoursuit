@@ -1,11 +1,16 @@
 var gameTable = document.querySelector(".gameTable table");
+var turnsLeft = document.querySelector(".turnsLeft");
+var scoreTrump = document.querySelector(".scoreTrump");
+var MPTrump = document.querySelector(".MPTrump");
+var capacityTrump = document.querySelector(".capacityTrump");
+var scoreMelania = document.querySelector(".scoreMelania");
+var MPMelania = document.querySelector(".MPMelania");
+var capacityMelania = document.querySelector(".capacityMelania");
 
 var trumpImg = "<img style='width:36px;height:36px;' src='./asset/img/trump.png' />";
 var melaniaImg = "<img style='width:36px;height:36px;' src='./asset/img/melania.png' />";
+var petiteImg = "<img style='width:36px;height:36px;' src='./asset/img/petite.png' />";
 
-var moveTo = (posX, posY, pers) => {
-	gameTable.rows[posY].cells[posX].innerHTML = pers;
-};
 
 var trumpPosX = 0;
 var trumpPosY = 0;
@@ -13,9 +18,20 @@ var trumpPosY = 0;
 var melaniaPosX = 23;
 var melaniaPosY = 15;
 
+var petitePosX = 10;
+var petitePosY = 8;
+
 var MP = 3;
 
 var turn = 30;
+
+var gameOver = () => {
+	console.log('wesh');
+}
+
+var moveTo = (posX, posY, pers) => {
+	gameTable.rows[posY].cells[posX].innerHTML = pers;
+};
 
 var render = () => {
 	for (var i = 0; i < 16; i++) {
@@ -26,6 +42,12 @@ var render = () => {
 
 	moveTo(trumpPosX, trumpPosY, trumpImg);
 	moveTo(melaniaPosX, melaniaPosY, melaniaImg);
+	moveTo(petitePosX, petitePosY, petiteImg);
+	turnsLeft.innerHTML = turn;
+
+	if (trumpPosX === petitePosX && trumpPosY === petitePosY) {
+		gameOver();
+	}
 }
 
 
