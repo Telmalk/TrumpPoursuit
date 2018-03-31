@@ -37,4 +37,5 @@ require_once "./include/header.php"
         ?>
 	</main>
 </body>
+<script src="./asset/js/movement.js"></script>
 </html>
