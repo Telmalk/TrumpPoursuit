@@ -57,7 +57,9 @@ main {
 
 .menu-dataIG-pers-trump {
 	width: 50%;
-	background: yellow;
+}
+.menu-dataIG-pers-melania {
+	width: 50%;
 }
 
 .victoryTrump, .victoryMelania {
@@ -81,4 +83,8 @@ main {
 
 .victoryTrumpTitle, .victoryMelaniaTitle {
 	text-align: center;
+}
+
+.currentPlayer {
+	background: red;
 }
