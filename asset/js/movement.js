@@ -11,6 +11,8 @@ var trumpImg = "<img style='width:36px;height:36px;' src='./asset/img/trump.png'
 var melaniaImg = "<img style='width:36px;height:36px;' src='./asset/img/melania.png' />";
 var petiteImg = "<img style='width:36px;height:36px;' src='./asset/img/petite.png' />";
 
+var sexyTrump = "<img style='width:36px;height:36px;' src='./asset/img/sexyTrump.gif' />";
+
 
 var trumpPosX = 0;
 var trumpPosY = 0;
