@@ -1,0 +1,40 @@
+<html>
+
+  <script language="javascript">
+    var valeur = 0;
+
+    function modifier(increment) {
+      valeur += increment;
+      document.getElementById('text').value = valeur;
+    }
+  </script>
+
+
+<body>
+  <div style="text-align:center"><input type="button" value="-10" onClick="modifier(-10)">
+    <input type="button" value="-5" onClick="modifier(-5)">
+    <input type="button" value="-1" onClick="modifier(-1)">
+    <input type="text" id="text" value="0" size="3" readonly="true" style="background-color:#FFFFFF; border:#FFFFFF none 0px; text-align:center; font-size:30px">
+    <input type="button" value="+1" onClick="modifier(1)">
+    <input type="button" value="+5" onClick="modifier(5)">
+    <input type="button" value="+10" onClick="modifier(10)">
+  </div>
+
+
+  <script language="javascript">
+    document.getElementById('text').value = valeur;
+  </script>
+</body>
+
+</html>
+
+
+
+
+
+
+<script type="text/javascript">
+
+document.querySelectorAll('[data-foo]');
+
+</script>
