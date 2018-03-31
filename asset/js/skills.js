@@ -1,6 +1,9 @@
 var myTable = document.getElementById('myTable');
+
 var melaniaBtn1 = document.querySelector('.MelaniaCacBtn');
 var melaniaBtn2 = document.querySelector('.MelaniaRangeBtn');
+
+var trumpImg = document.querySelector('.trumpImg');
 var trumpBtn1 = document.querySelector('.TrumpCacBtn');
 var trumpBtn2 = document.querySelector('.TrumpRangeBtn');
 var pose = '';
@@ -70,10 +73,10 @@ function melaniaRange() {
   }
 }
 
-function trumpCac() {
+function trumpHealth() {
 
 }
 
-function trumpRange() {
+function trumpJump() {
 
 }

@@ -18,6 +18,7 @@ main {
 	width: 80%;
 	display: flex;
 	justify-content: center;
+	background-image: url(../img/Desktop_HD.png);
 }
 
 .menu {
@@ -28,6 +29,16 @@ main {
 .menu-btns {
 	height: 50%;
 	background: blue;
+}
+
+.menu-btns-saveReset {
+	text-align: center;
+}
+
+.menu-btns-scoresDiv {
+	font-size: 24px;
+	text-align: center;
+	margin-top: 40px;
 }
 
 .menu-dataIG {
