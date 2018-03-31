@@ -37,5 +37,7 @@ require_once "./include/header.php"
         ?>
 	</main>
 </body>
+<script src="./asset/js/data.js"></script>
 <script src="./asset/js/movement.js"></script>
+<script src="./asset/js/skills.js"></script>
 </html>
