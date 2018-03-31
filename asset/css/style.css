@@ -19,6 +19,9 @@ main {
 	display: flex;
 	justify-content: center;
 	background-image: url(../img/Desktop_HD.png);
+	background-size: 988px 100%;
+	background-repeat: no-repeat;
+	background-position: center;
 }
 
 .menu {

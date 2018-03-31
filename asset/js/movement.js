@@ -22,6 +22,8 @@ var petiteImg = "<img style='width:36px;height:36px;' src='./asset/img/petite.pn
 var trumpPosX = 0;
 var trumpPosY = 0;
 var hpTrump = 100;
+var scoreTrumpData = 0;
+scoreTrump.innerHTML = scoreTrumpData;
 
 var melaniaPosX = 23;
 var melaniaPosY = 15;
@@ -55,6 +57,15 @@ var moveTo = (posX, posY, pers) => {
 };
 
 var render = () => {
+	if (trumpPosX === petitePosX && trumpPosY === petitePosY) {
+		gameOver('trump');
+		return;
+	}
+	if (turn === 0) {
+		gameOver('melania');
+		return;
+	}
+	
 	MP = MP < 0 ? 0 : MP;
 
 	if ((trumpSkill1 === 0 && turn % 2 === 0) || (melaniaSkill1 === 0 && turn % 2 === 1)) {
@@ -78,6 +89,15 @@ var render = () => {
 		turnsLeft.innerHTML = turn;
 		for (var k = 0; k < dollars.length; k++) {
 			gameTable.rows[dollars[k][0]].cells[dollars[k][1]].innerHTML = '$';
+			if (dollars[k][0] === trumpPosY && dollars[k][1] === trumpPosX) {
+				gameTable.rows[dollars[k][0]].cells[dollars[k][1]].innerHTML = trumpImg;
+				scoreTrumpData++;
+				dollars.splice(k, 1);
+			}
+		}
+		scoreTrump.innerHTML = scoreTrumpData;
+		if (melaniaSkill2 > 1) {
+			melaniaRange();
 		}
 		return;
 	}
@@ -103,7 +123,13 @@ var render = () => {
 	turnsLeft.innerHTML = turn;
 	for (var k = 0; k < dollars.length; k++) {
 		gameTable.rows[dollars[k][0]].cells[dollars[k][1]].innerHTML = '$';
+		if (dollars[k][0] === trumpPosY && dollars[k][1] === trumpPosX) {
+			gameTable.rows[dollars[k][0]].cells[dollars[k][1]].innerHTML = trumpImg;
+			scoreTrumpData++;
+			dollars.splice(k, 1);
+		}
 	}
+	scoreTrump.innerHTML = scoreTrumpData;
 
 	if (trumpPosX === petitePosX && trumpPosY === petitePosY) {
 		gameOver('trump');
@@ -113,6 +139,10 @@ var render = () => {
 		gameOver('melania');
 		return;
 	}
+
+	// for (var i = 0; i < dollars.length; i++) {
+	// 	dollars[i]
+	// }
 }
 
 window.addEventListener('keyup', (e) => {

@@ -3,6 +3,7 @@ var myTable = document.getElementById('myTable');
 var melaniaBtn1 = document.querySelector('.MelaniaCacBtn');
 var melaniaBtn2 = document.querySelector('.MelaniaRangeBtn');
 var melaniaSkill1 = 1;
+var melaniaSkill2 = 3;
 
 // var trumpImg = document.querySelector('.trumpImg');
 var trumpBtn1 = document.querySelector('.TrumpCacBtn');
@@ -127,13 +128,25 @@ function melaniaCac() {
   }
 }
 
+// function melaniaRange() {
+//   for (var i = datas.melaniaX.value - 2; i < datas.melaniaX.value + 2; i++) {
+//     myTable.rows[i].cells[datas.melaniaY.value].className = "range";
+//   }
+//   for (var i = datas.melaniaY.value - 2; i < datas.melaniaXY.value + 2; i++) {
+//     myTable.rows[datas.melaniaX.value].cells[i].className = "range";
+//   }
+// }
+
 function melaniaRange() {
-  for (var i = datas.melaniaX.value - 2; i < datas.melaniaX.value + 2; i++) {
-    myTable.rows[i].cells[datas.melaniaY.value].className = "range";
+  if (melaniaSkill2 >= 2) {
+    melaniaSkill2--;
+    return;
   }
-  for (var i = datas.melaniaY.value - 2; i < datas.melaniaXY.value + 2; i++) {
-    myTable.rows[datas.melaniaX.value].cells[i].className = "range";
-  }
+  MP++;
+  melaniaSkill2 = 0;
+
+  render();
+  melaniaSkill2 = 3;
 }
 
 function trumpHealth() {
@@ -158,5 +171,8 @@ window.addEventListener('keyup', (e) => {
   }
   if (e.keyCode === 76) {
     melaniaCac();
+  }
+  if (e.keyCode === 77) {
+    melaniaRange();
   }
 })
