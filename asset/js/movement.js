@@ -13,7 +13,6 @@ var petiteImg = "<img style='width:36px;height:36px;' src='./asset/img/petite.pn
 
 var sexyTrump = "<img style='width:36px;height:36px;' src='./asset/img/sexyTrump.gif' />";
 
-
 var trumpPosX = 0;
 var trumpPosY = 0;
 
@@ -45,6 +44,7 @@ var render = () => {
 	moveTo(trumpPosX, trumpPosY, trumpImg);
 	moveTo(melaniaPosX, melaniaPosY, melaniaImg);
 	moveTo(petitePosX, petitePosY, petiteImg);
+	moveTo(10, 10, sexyTrump);
 	turnsLeft.innerHTML = turn;
 
 	if (trumpPosX === petitePosX && trumpPosY === petitePosY) {
