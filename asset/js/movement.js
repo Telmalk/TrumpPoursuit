@@ -6,12 +6,13 @@ var capacityTrump = document.querySelector(".capacityTrump");
 var scoreMelania = document.querySelector(".scoreMelania");
 var MPMelania = document.querySelector(".MPMelania");
 var capacityMelania = document.querySelector(".capacityMelania");
+var victoryTrump = document.querySelector(".victoryTrump");
 
 var trumpImg = "<img style='width:36px;height:36px;' src='./asset/img/trump.png' />";
 var melaniaImg = "<img style='width:36px;height:36px;' src='./asset/img/melania.png' />";
 var petiteImg = "<img style='width:36px;height:36px;' src='./asset/img/petite.png' />";
 
-var sexyTrump = "<img style='width:36px;height:36px;' src='./asset/img/sexyTrump.gif' />";
+// var sexyTrump = "<video class='victoryTrumpVid' autoplay loop style='width:36px;height:36px;' src='./asset/img/sexyTrump.mp4' />";
 
 var trumpPosX = 0;
 var trumpPosY = 0;
@@ -19,15 +20,15 @@ var trumpPosY = 0;
 var melaniaPosX = 23;
 var melaniaPosY = 15;
 
-var petitePosX = 10;
-var petitePosY = 8;
+var petitePosX = 2;
+var petitePosY = 1;
 
 var MP = 3;
 
 var turn = 30;
 
 var gameOver = () => {
-	console.log('wesh');
+	victoryTrump.style.display = "flex";
 }
 
 var moveTo = (posX, posY, pers) => {
@@ -44,7 +45,6 @@ var render = () => {
 	moveTo(trumpPosX, trumpPosY, trumpImg);
 	moveTo(melaniaPosX, melaniaPosY, melaniaImg);
 	moveTo(petitePosX, petitePosY, petiteImg);
-	moveTo(10, 10, sexyTrump);
 	turnsLeft.innerHTML = turn;
 
 	if (trumpPosX === petitePosX && trumpPosY === petitePosY) {

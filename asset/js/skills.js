@@ -3,26 +3,26 @@ var myTable = document.getElementById('myTable');
 var melaniaBtn1 = document.querySelector('.MelaniaCacBtn');
 var melaniaBtn2 = document.querySelector('.MelaniaRangeBtn');
 
-var trumpImg = document.querySelector('.trumpImg');
+// var trumpImg = document.querySelector('.trumpImg');
 var trumpBtn1 = document.querySelector('.TrumpCacBtn');
 var trumpBtn2 = document.querySelector('.TrumpRangeBtn');
 var pose = '';
 
-melaniaBtn1.addEventListener('click', function() {
-  melaniaCac();
-});
+// melaniaBtn1.addEventListener('click', function() {
+//   melaniaCac();
+// });
 
-melaniaBtn2.addEventListener('click', function() {
-  melaniaRange();
-});
+// melaniaBtn2.addEventListener('click', function() {
+//   melaniaRange();
+// });
 
-trumpBtn1.addEventListener('click', function() {
-  trumpCac();
-});
+// trumpBtn1.addEventListener('click', function() {
+//   trumpCac();
+// });
 
-trumpBtn2.addEventListener('click', function() {
-  trumpRange();
-});
+// trumpBtn2.addEventListener('click', function() {
+//   trumpRange();
+// });
 
 function comparePos(el1, el2, el3, el4) {
   // Retourne true si les deux elements se trouvent sur une case adjacente
