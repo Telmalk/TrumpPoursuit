@@ -65,7 +65,7 @@ var render = () => {
 		gameOver('melania');
 		return;
 	}
-	
+
 	MP = MP < 0 ? 0 : MP;
 
 	if ((trumpSkill1 === 0 && turn % 2 === 0) || (melaniaSkill1 === 0 && turn % 2 === 1)) {
@@ -231,3 +231,9 @@ window.addEventListener('keyup', (e) => {
 
 	render();
 })
+
+window.addEventListener('contextmenu', function(ev) {
+    ev.preventDefault();
+    alert('NOPE');
+    return false;
+}, false);
