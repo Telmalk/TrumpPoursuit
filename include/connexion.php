@@ -7,7 +7,7 @@
  */
 
 try {
-    $conn = new PDO('mysql:dbname=trumppoursuit;host=localhost', 'root', 'wFo(pZt<');
+    $conn = new PDO('mysql:dbname=trumppoursuit;host=localhost', 'root', '');
     $conn->exec("DET NAMES UTF8");
 } catch (PDOException $exception) {
     die ($exception->getMessage());
