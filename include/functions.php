@@ -26,8 +26,10 @@ function menu()
 <div class="menu">
     <div class="menu-btns">
         <div class="menu-btns-saveReset">
-            <button class="save">SAVE</button>
-            <button class="reset">RESET</button>
+            <?php
+            form("save.php", "SAVE", "save");
+            form("reset.php","RESET", "reset");
+            ?>
         </div>
         <div class="menu-btns-scoresDiv">
             <h2 class="menu-btns-scoresDiv-title">Highscores:</h2>
@@ -109,5 +111,29 @@ menu();
 <script src="../asset/js/movement.js"></script>
 <script src="../asset/js/skills.js"></script>
 </html>
+<?php
+}
+
+
+/**
+ * @param string $action
+ * @param string $nameButton
+ * @param string $classButton
+ * return void
+ */
+function form(string $action, string $nameButton, string $classButton) : void
+{
+    ?>
+    <form action="./include/<?=$action?>" method="post">
+        <button class="<?=$classButton?>"><?=$nameButton?></button>
+        <input hidden type="text">
+        <input hidden type="text">
+        <input hidden type="text">
+        <input hidden type="text">
+        <input hidden type="text">
+        <input hidden type="text">
+        <input hidden type="text">
+        <input hidden type="text">
+    </form>
 <?php
 }
