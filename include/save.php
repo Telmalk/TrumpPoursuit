@@ -5,6 +5,4 @@
  * Date: 31/03/2018
  * Time: 02:49
  */
-
-$save "SELECT
-"
+var_dump($_POST["posXtrump"]);

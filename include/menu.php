@@ -9,6 +9,10 @@
 <div class="menu">
     <div class="menu-btns">
         <div class="menu-btns-saveReset">
+
+            <?php
+                form();
+            ?>
             <button class="save">SAVE</button>
             <button class="reset">RESET</button>
         </div>
