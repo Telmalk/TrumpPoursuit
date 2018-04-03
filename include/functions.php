@@ -126,14 +126,17 @@ function form(string $action, string $nameButton, string $classButton) : void
     ?>
     <form action="./include/<?=$action?>" method="post">
         <button class="<?=$classButton?>"><?=$nameButton?></button>
-        <input hidden type="text">
-        <input hidden type="text">
-        <input hidden type="text">
-        <input hidden type="text">
-        <input hidden type="text">
-        <input hidden type="text">
-        <input hidden type="text">
-        <input hidden type="text">
+        <input hidden name="posXtrump" type="text">
+        <input hidden name="posYtrump" type="text">
+        <input hidden name="posXmexican" type="text">
+        <input hidden name="posYmexican" type="text">
+        <input hidden name="pmTrump" type="text">
+        <input hidden name="pmMexican" type="text">
+        <input hidden name="spell1TrumpCouldDown" type="text">
+        <input hidden name="spell2TrumpCouldDown" type="text">
+        <input hidden name="spell1MexicanCouldDown" type="text">
+        <input hidden name="spell2MexicanCouldDown" type="text">
+        <input hidden name="turnLeft" type="text">
     </form>
 <?php
 }
