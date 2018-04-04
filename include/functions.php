@@ -87,21 +87,21 @@ function contain()
             $td = 24;
             $i = 0;
             while ($i < $tr) : ?>
-<tr class="column">
-    <?php
-    $j = 0;
-    while ($j < $td): ?>
-        <td class="line"></td>
-        <?php
-        $j++;
-    endwhile; ?>
-</tr>
-<?php
-$i++;
-endwhile;
-?>
-</table>
-</div>
+                <tr class="column">
+                <?php
+                $j = 0;
+                while ($j < $td): ?>
+                    <td class="line"></td>
+                    <?php
+                    $j++;
+                endwhile; ?>
+                </tr>
+                <?php
+                $i++;
+            endwhile;
+            ?>
+        </table>
+    </div>
 <?php
 menu();
 ?>
@@ -126,17 +126,19 @@ function form(string $action, string $nameButton, string $classButton) : void
     ?>
     <form action="./include/<?=$action?>" method="post">
         <button class="<?=$classButton?>"><?=$nameButton?></button>
-        <input hidden name="posXtrump" type="text">
-        <input hidden name="posYtrump" type="text">
-        <input hidden name="posXmexican" type="text">
-        <input hidden name="posYmexican" type="text">
-        <input hidden name="pmTrump" type="text">
-        <input hidden name="pmMexican" type="text">
-        <input hidden name="spell1TrumpCouldDown" type="text">
-        <input hidden name="spell2TrumpCouldDown" type="text">
-        <input hidden name="spell1MexicanCouldDown" type="text">
-        <input hidden name="spell2MexicanCouldDown" type="text">
-        <input hidden name="turnLeft" type="text">
+        <input hidden class="posXTrump" name="posXtrump" type="text">
+        <input hidden class="posYtrump" name="posYtrump" type="text">
+        <input hidden class="posXMela" name="posXmexican" type="text">
+        <input hidden class="posYMela" name="posYmexican" type="text">
+        <input hidden class="pmTrump" name="pmTrump" type="text">
+        <input hidden class="pmMexican" name="pmMexican" type="text">
+        <input hidden class="spell1TrumpCouldDown" name="spell1TrumpCouldDown" type="text">
+        <input hidden class="spell2TrumpCouldDown" name="spell2TrumpCouldDown" type="text">
+        <input hidden class="spell1MexicanCouldDown" name="spell1MexicanCouldDown" type="text">
+        <input hidden class="spell2MexicanCouldDown" name="spell2MexicanCouldDown" type="text">
+        <input hidden class="turnLeft" name="turnLeft" type="text">
+        <input hidden class="hpTrump" name="hpTrump" type="text">
+        <input hidden class="hpMela" name="hpTrump" type="text">
     </form>
 <?php
 }
