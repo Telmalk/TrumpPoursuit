@@ -6,6 +6,8 @@
  * Time: 02:10
  */
 
+//include "./connexion.php";
+
 function my_header()
 {
     ?>
@@ -20,15 +22,15 @@ function my_header()
 <?php
 }
 
-function menu()
+function menu($conn)
 {
     ?>
 <div class="menu">
     <div class="menu-btns">
         <div class="menu-btns-saveReset">
             <?php
-            form("save.php", "SAVE", "save");
-            form("reset.php","RESET", "reset");
+            form("save.php", "SAVE", "save", $conn);
+            form("reset.php","RESET", "reset", $conn);
             ?>
         </div>
         <div class="menu-btns-scoresDiv">
@@ -66,7 +68,7 @@ function menu()
 <?php
 }
 
-function contain()
+function contain($conn)
 {
 
 ?>
@@ -103,7 +105,7 @@ function contain()
         </table>
     </div>
 <?php
-menu();
+menu($conn);
 ?>
 </main>
 </body>
@@ -114,6 +116,7 @@ menu();
 <?php
 }
 
+$toto = "lo";
 
 /**
  * @param string $action
@@ -121,24 +124,59 @@ menu();
  * @param string $classButton
  * return void
  */
-function form(string $action, string $nameButton, string $classButton) : void
+function form(string $action, string $nameButton, string $classButton, $conn) : void
 {
+    $sqlTrump = "SELECT
+                   name,
+                    hp,
+                    coulddown_spell_1,
+                    coulddown_spell_2,
+                    pos_x,
+                    pos_y,
+                    mp
+                  FROM
+                    charact
+                  WHERE
+                  name = 'trump'
+                  ;";
+    $sqlMexi = "SELECT
+                  name,
+                    hp,
+                    coulddown_spell_1,
+                    coulddown_spell_2,
+                    pos_x,
+                    pos_y,
+                    mp
+                  FROM
+                    charact
+                  WHERE
+                    name = 'mexican'
+                    ;";
+
+    $stmt = $conn->prepare($sqlTrump);
+    $stmt->execute();
+    $row = $stmt->fetch(PDO::FETCH_ASSOC);
     ?>
     <form action="./include/<?=$action?>" method="post">
         <button class="<?=$classButton?>"><?=$nameButton?></button>
-        <input hidden class="posXTrump" name="posXtrump" type="text">
-        <input hidden class="posYtrump" name="posYtrump" type="text">
-        <input hidden class="posXMela" name="posXmexican" type="text">
-        <input hidden class="posYMela" name="posYmexican" type="text">
-        <input hidden class="pmTrump" name="pmTrump" type="text">
-        <input hidden class="pmMexican" name="pmMexican" type="text">
-        <input hidden class="spell1TrumpCouldDown" name="spell1TrumpCouldDown" type="text">
-        <input hidden class="spell2TrumpCouldDown" name="spell2TrumpCouldDown" type="text">
-        <input hidden class="spell1MexicanCouldDown" name="spell1MexicanCouldDown" type="text">
-        <input hidden class="spell2MexicanCouldDown" name="spell2MexicanCouldDown" type="text">
-        <input hidden class="turnLeft" name="turnLeft" type="text">
-        <input hidden class="hpTrump" name="hpTrump" type="text">
-        <input hidden class="hpMela" name="hpTrump" type="text">
+        <input hidden class="posXTrump" name="posXtrump" type="text" value="<?=$row['pos_x']?>">
+        <input hidden class="posYtrump" name="posYtrump" type="text" value="<?=$row['pos_y']?>">
+        <input hidden class="pmTrump" name="pmTrump" type="text" value="<?=$row['mp']?>">
+        <input hidden class="spell1TrumpCouldDown" name="spell1TrumpCouldDown" type="text" value="<?=$row['coulddown_spell_1']?>">
+        <input hidden class="spell2TrumpCouldDown" name="spell2TrumpCouldDown" type="text" value="<?=$row['coulddown_spell_2']?>">
+        <input hidden class="hpTrump" name="hpTrump" type="text" value="<?=$row['hp']?>">
+        <?php
+            $stmt = $conn->prepare($sqlMexi);
+            $stmt->execute();
+            $row = $stmt->fetch(PDO::FETCH_ASSOC);
+        ?>
+        <input hidden class="posXMela" name="posXmexican" type="text" value="<?=$row['pos_x']?>">
+        <input hidden class="posYMela" name="posYmexican" type="text" value="<?=$row['pos_y']?>">
+        <input hidden class="pmMexican" name="pmMexican" type="text" value="<?=$row['mp']?>">
+        <input hidden class="spell1MexicanCouldDown" name="spell1MexicanCouldDown" type="text" value="<?=$row['coulddown_spell_1']?>">
+        <input hidden class="spell2MexicanCouldDown" name="spell2MexicanCouldDown" type="text" value="<?=$row['coulddown_spell_2']?>">
+        <input hidden class="hpMela" name="hpTrump" type="text" value="<?=$row['hp']?>">
+        <!--<input hidden class="turnLeft" name="turnLeft" type="text"> -->
     </form>
 <?php
 }
