@@ -9,5 +9,5 @@ require_once "./include/connexion.php";
 require_once "./include/functions.php";
 
 my_header();
-contain();
+contain($conne);
 
